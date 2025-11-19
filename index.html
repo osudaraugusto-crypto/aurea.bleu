@@ -3,42 +3,63 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Auréa Bleu – El arte de una esencia pura</title>
+  <title>Auréa Bleu – Estudio de fragancias</title>
+  <meta name="description" content="Auréa Bleu: estudio de fragancias con curaduría joven. Perfumes de nicho y diseñador 100% originales, precios honestos y asesoramiento personalizado." />
 
-  <!-- Tipografías elegantes -->
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <!-- Fuente -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet" />
 
   <style>
     :root {
-      --azul-profundo: #111827;
-      --azul-lujo: #1f2937;
-      --azul-detalle: #3b82f6;
-      --dorado: #e5c98f;
-      --dorado-soft: rgba(229, 201, 143, 0.18);
-      --texto: #e5e7eb;
-      --texto-sec: #9ca3af;
-      --borde: #374151;
-      --bg: radial-gradient(circle at top, #111827 0, #020617 50%, #020617 100%);
-      --wa: #25d366;
+      --bg: #020617;
+      --bg-soft: #020818;
+      --card: #020b1c;
+      --accent: #38bdf8;
+      --accent-soft: rgba(56,189,248,0.15);
+      --accent-strong: #0ea5e9;
+      --text: #e5f0ff;
+      --text-soft: #9ca3af;
+      --border-subtle: rgba(148,163,184,0.25);
+      --radius-xl: 18px;
+      --shadow-soft: 0 22px 60px rgba(15,23,42,0.85);
+      --max-width: 1100px;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
       font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      background: var(--bg);
-      color: var(--texto);
-      line-height: 1.6;
+      background: radial-gradient(circle at 10% 0%, #0f172a, #020617 58%, #020617 100%);
+      color: var(--text);
       -webkit-font-smoothing: antialiased;
     }
 
-    img { max-width: 100%; display: block; }
-    a { text-decoration: none; color: inherit; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .page {
+      min-height: 100vh;
+      color: var(--text);
+    }
 
     .container {
-      max-width: 1100px;
+      width: 100%;
+      max-width: var(--max-width);
       margin: 0 auto;
-      padding: 0 1.5rem;
+      padding: 0 1.3rem;
     }
 
     /* HEADER */
@@ -47,9 +68,9 @@
       position: sticky;
       top: 0;
       z-index: 20;
-      backdrop-filter: blur(12px);
-      background: linear-gradient(to bottom, rgba(15,23,42,0.96), rgba(15,23,42,0.75));
-      border-bottom: 1px solid rgba(55,65,81,0.8);
+      backdrop-filter: blur(18px);
+      background: linear-gradient(to bottom, rgba(2,6,23,0.96), rgba(2,6,23,0.78), transparent);
+      border-bottom: 1px solid rgba(148,163,184,0.18);
     }
 
     .nav {
@@ -57,1162 +78,1197 @@
       align-items: center;
       justify-content: space-between;
       padding: 0.8rem 0;
+      gap: 1rem;
     }
 
-    .nav-left {
+    .brand {
       display: flex;
       align-items: center;
-      gap: 0.7rem;
+      gap: 0.6rem;
     }
 
-    .logo-circle {
-      width: 34px;
-      height: 34px;
-      border-radius: 50%;
-      border: 1px solid var(--dorado);
+    .brand-mark {
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 20% 0%, #38bdf8, #0f172a);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-family: "Cormorant Garamond", serif;
-      font-size: 1.15rem;
-      color: var(--dorado);
-      background: radial-gradient(circle at top, rgba(249,250,251,0.12), #020617);
+      box-shadow: 0 10px 28px rgba(56,189,248,0.55);
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 600;
     }
 
-    .logo-text {
+    .brand-text {
       display: flex;
       flex-direction: column;
-      gap: 0.08rem;
+      gap: 0.12rem;
     }
 
-    .logo-main {
-      font-family: "Cormorant Garamond", serif;
+    .brand-name {
+      font-family: "Playfair Display", serif;
+      font-size: 1.1rem;
       letter-spacing: 0.16em;
       text-transform: uppercase;
-      font-size: 0.95rem;
-      color: #f3f4f6;
     }
 
-    .logo-sub {
-      font-size: 0.7rem;
+    .brand-sub {
+      font-size: 0.70rem;
       text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--texto-sec);
+      letter-spacing: 0.18em;
+      color: var(--text-soft);
     }
 
     .nav-links {
       display: flex;
       gap: 1.2rem;
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      color: var(--texto-sec);
+      align-items: center;
+      font-size: 0.88rem;
+      color: var(--text-soft);
     }
 
     .nav-links a {
       position: relative;
-      padding-bottom: 0.1rem;
+      padding-bottom: 0.15rem;
     }
 
     .nav-links a::after {
       content: "";
       position: absolute;
       left: 0;
-      bottom: -0.12rem;
+      bottom: -0.15rem;
       width: 0;
       height: 1px;
-      background: var(--dorado);
-      transition: width 0.18s ease;
+      background: linear-gradient(to right, #38bdf8, #0ea5e9);
+      transition: width 0.22s ease-out;
+    }
+
+    .nav-links a:hover {
+      color: #e5f0ff;
     }
 
     .nav-links a:hover::after {
       width: 100%;
     }
 
-    .nav-toggle {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 1.6rem;
-      color: #f3f4f6;
+    .nav-cta {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
-
-    /* BOTONES */
 
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 0.4rem;
+      padding: 0.5rem 0.95rem;
       border-radius: 999px;
       border: 1px solid transparent;
-      padding: 0.75rem 1.6rem;
       font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
+      font-weight: 500;
       cursor: pointer;
-      transition:
-        background 0.16s ease,
-        color 0.16s ease,
-        box-shadow 0.16s ease,
-        transform 0.08s ease,
-        border-color 0.16s ease;
+      transition: all 0.18s ease-out;
       white-space: nowrap;
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, #1f2937, #111827);
-      border-color: rgba(148,163,184,0.7);
-      color: #f9fafb;
-      box-shadow: 0 18px 40px rgba(0,0,0,0.85);
+      background: radial-gradient(circle at 0 0, #38bdf8, #0ea5e9);
+      color: #0b1220;
+      box-shadow: 0 18px 40px rgba(56,189,248,0.45);
     }
 
     .btn-primary:hover {
       transform: translateY(-1px);
-      box-shadow: 0 24px 60px rgba(0,0,0,0.95);
+      box-shadow: 0 22px 52px rgba(56,189,248,0.6);
+      filter: brightness(1.05);
     }
 
-    .btn-outline {
-      background: transparent;
-      border-color: rgba(156,163,175,0.7);
-      color: #e5e7eb;
+    .btn-ghost {
+      background: rgba(15,23,42,0.7);
+      border-color: rgba(148,163,184,0.4);
+      color: var(--text-soft);
     }
 
-    .btn-outline:hover {
-      background: rgba(31,41,55,0.9);
+    .btn-ghost:hover {
+      border-color: #38bdf8;
+      color: #e5f0ff;
+      background: rgba(15,23,42,0.95);
     }
 
     .btn-wa {
-      background: var(--wa);
-      border-color: rgba(6,95,70,0.8);
+      background: linear-gradient(135deg, #22c55e, #16a34a);
       color: #022c22;
-      box-shadow: 0 18px 40px rgba(34,197,94,0.7);
-      font-size: 0.78rem;
+      box-shadow: 0 18px 45px rgba(34,197,94,0.38);
     }
 
     .btn-wa:hover {
+      filter: brightness(1.05);
       transform: translateY(-1px);
-      box-shadow: 0 24px 52px rgba(34,197,94,0.9);
-    }
-
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      border-radius: 999px;
-      border: 1px solid rgba(156,163,175,0.7);
-      padding: 0.4rem 0.9rem;
-      font-size: 0.72rem;
-      color: var(--texto-sec);
-      background: rgba(15,23,42,0.9);
-    }
-
-    .pill-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--dorado);
-      box-shadow: 0 0 10px var(--dorado);
     }
 
     /* HERO */
 
     .hero {
-      padding: 3.5rem 0 3.3rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: -40%;
-      background:
-        radial-gradient(circle at top, rgba(249,250,251,0.15) 0, transparent 55%),
-        radial-gradient(circle at bottom right, rgba(37,99,235,0.25), transparent 55%);
-      opacity: 0.8;
-      pointer-events: none;
-    }
-
-    .hero-inner {
-      position: relative;
-      z-index: 1;
+      padding: 3.5rem 0 3rem;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+      grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
       gap: 2.8rem;
       align-items: center;
     }
 
-    .hero-kicker {
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.18rem 0.65rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.45);
+      background: radial-gradient(circle at 0 0, rgba(56,189,248,0.16), rgba(15,23,42,0.9));
       font-size: 0.72rem;
-      color: var(--texto-sec);
-      margin-bottom: 0.5rem;
-    }
-
-    .hero-title {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 3rem;
-      line-height: 1.05;
-      color: #f9fafb;
-      margin-bottom: 0.3rem;
-    }
-
-    .hero-subtitle {
-      font-size: 0.96rem;
-      color: var(--texto-sec);
-      max-width: 430px;
-      margin-bottom: 1.5rem;
-    }
-
-    .hero-cta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-soft);
       margin-bottom: 1rem;
     }
 
-    .hero-note {
-      font-size: 0.78rem;
-      color: var(--texto-sec);
-      max-width: 430px;
+    .eyebrow-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 0 6px rgba(34,197,94,0.25);
     }
 
-    .hero-note strong {
-      color: #f9fafb;
-      font-weight: 500;
-    }
-
-    .hero-card {
-      border-radius: 20px;
-      border: 1px solid rgba(55,65,81,0.9);
-      background: radial-gradient(circle at top left, rgba(31,41,55,0.98), #020617);
-      padding: 1.3rem 1.4rem;
-      box-shadow: 0 24px 60px rgba(0,0,0,0.95);
-    }
-
-    .hero-card-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.78rem;
-      color: var(--texto-sec);
+    .hero-title {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2.2rem, 4vw, 3rem);
+      line-height: 1.08;
+      letter-spacing: 0.03em;
       margin-bottom: 0.9rem;
     }
 
-    .hero-pill {
-      border-radius: 999px;
-      border: 1px solid rgba(156,163,175,0.9);
-      padding: 0.2rem 0.75rem;
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
+    .hero-gradient-word {
+      background: radial-gradient(circle at 0 0, #38bdf8, #f97316);
+      -webkit-background-clip: text;
+      color: transparent;
     }
 
-    .hero-image-box {
-      border-radius: 16px;
-      border: 1px solid rgba(55,65,81,0.9);
-      background:
-        radial-gradient(circle at top, rgba(229,201,143,0.1), rgba(17,24,39,1));
-      min-height: 190px;
+    .hero-sub {
+      font-size: 0.96rem;
+      color: var(--text-soft);
+      max-width: 32rem;
+      line-height: 1.6;
+      margin-bottom: 1.6rem;
+    }
+
+    .hero-ctas {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      font-family: "Cormorant Garamond", serif;
-      font-size: 1rem;
-      color: #f3f4f6;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin-bottom: 1.6rem;
     }
 
-    .hero-card-bottom {
-      margin-top: 0.9rem;
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
       font-size: 0.78rem;
-      color: var(--texto-sec);
+      color: var(--text-soft);
     }
 
-    /* SECCIONES GENERALES */
+    .hero-meta-badge {
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.4);
+      background: rgba(15,23,42,0.85);
+    }
+
+    .hero-panel {
+      border-radius: 22px;
+      border: 1px solid rgba(148,163,184,0.35);
+      padding: 1.4rem 1.3rem;
+      background:
+        radial-gradient(circle at 0 0, rgba(56,189,248,0.16), transparent 60%),
+        radial-gradient(circle at 100% 100%, rgba(248,250,252,0.05), transparent 55%),
+        rgba(15,23,42,0.96);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .hero-panel-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+      font-size: 0.8rem;
+      color: var(--text-soft);
+    }
+
+    .hero-panel-title {
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-badge-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+    }
+
+    .hero-badge-label {
+      color: var(--text-soft);
+    }
+
+    .hero-badge-value {
+      font-weight: 500;
+      color: #e5f0ff;
+    }
+
+    .hero-chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.6rem;
+    }
+
+    .chip {
+      font-size: 0.7rem;
+      padding: 0.1rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.4);
+      color: var(--text-soft);
+      background: rgba(15,23,42,0.95);
+    }
+
+    /* SECTIONS */
 
     section {
-      position: relative;
-      z-index: 1;
-      padding: 3.2rem 0;
+      padding: 3rem 0;
     }
 
     .section-header {
-      margin-bottom: 2rem;
+      margin-bottom: 1.9rem;
+      max-width: 40rem;
     }
 
     .section-kicker {
-      font-size: 0.72rem;
+      font-size: 0.75rem;
       text-transform: uppercase;
-      letter-spacing: 0.2em;
-      color: var(--texto-sec);
+      letter-spacing: 0.18em;
+      color: var(--accent-strong);
       margin-bottom: 0.4rem;
     }
 
     .section-title {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 2rem;
-      color: #f9fafb;
-      margin-bottom: 0.25rem;
+      font-family: "Playfair Display", serif;
+      font-size: 1.6rem;
+      margin-bottom: 0.4rem;
     }
 
     .section-sub {
       font-size: 0.9rem;
-      color: var(--texto-sec);
-      max-width: 520px;
+      color: var(--text-soft);
+      line-height: 1.6;
     }
 
-    /* SOBRE LA MARCA */
+    /* ABOUT */
 
-    .sobre-grid {
+    .about-grid {
       display: grid;
       grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-      gap: 2.5rem;
-      align-items: flex-start;
+      gap: 2rem;
     }
 
-    .sobre-text p + p {
-      margin-top: 0.7rem;
+    .about-card {
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border-subtle);
+      background: radial-gradient(circle at 0 0, rgba(56,189,248,0.1), transparent 60%), #020617;
+      padding: 1.3rem 1.2rem;
+      box-shadow: 0 16px 45px rgba(15,23,42,0.9);
       font-size: 0.9rem;
+      color: var(--text-soft);
+      line-height: 1.6;
     }
 
-    .sobre-card {
-      border-radius: 18px;
-      border: 1px solid rgba(55,65,81,0.9);
-      background: linear-gradient(145deg, #111827, #020617);
-      padding: 1.3rem 1.4rem;
-      font-size: 0.86rem;
-      color: var(--texto-sec);
-      box-shadow: 0 22px 60px rgba(0,0,0,0.9);
-    }
-
-    .sobre-card h3 {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 1.2rem;
-      color: #f9fafb;
+    .about-pill {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-soft);
       margin-bottom: 0.5rem;
     }
 
-    .pills {
+    .about-highlight {
+      color: var(--accent-strong);
+      font-weight: 500;
+    }
+
+    .about-list {
+      margin-top: 0.7rem;
+      display: grid;
+      gap: 0.5rem;
+      font-size: 0.86rem;
+    }
+
+    .about-list li {
+      list-style: none;
       display: flex;
-      flex-wrap: wrap;
       gap: 0.4rem;
-      margin-top: 0.8rem;
+      align-items: flex-start;
     }
 
-    .pill-tag {
+    .about-dot {
+      margin-top: 0.35rem;
+      width: 6px;
+      height: 6px;
       border-radius: 999px;
-      border: 1px solid rgba(75,85,99,0.9);
-      padding: 0.22rem 0.75rem;
-      font-size: 0.74rem;
-      color: #e5e7eb;
-      background: rgba(15,23,42,0.95);
+      background: rgba(148,163,184,0.9);
     }
 
-    /* FRAGANCIAS */
+    .about-side {
+      display: grid;
+      gap: 0.7rem;
+      font-size: 0.82rem;
+      color: var(--text-soft);
+    }
+
+    .about-side-card {
+      border-radius: 14px;
+      border: 1px dashed rgba(148,163,184,0.35);
+      padding: 0.9rem 0.9rem;
+      background: rgba(15,23,42,0.9);
+    }
+
+    .about-side-label {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent-strong);
+      margin-bottom: 0.2rem;
+    }
+
+    .about-side-strong {
+      color: #e5f0ff;
+      font-weight: 500;
+    }
+
+    /* CARDS GRID */
 
     .cards-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1.6rem;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1.3rem;
+    }
+
+    @media (max-width: 1024px) {
+      .cards-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 700px) {
+      .hero-grid,
+      .about-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .cards-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      header {
+        position: static;
+      }
+
+      .nav-links {
+        display: none;
+      }
     }
 
     .card {
-      border-radius: 18px;
-      border: 1px solid rgba(55,65,81,0.9);
-      background: radial-gradient(circle at top left, #111827, #020617);
-      padding: 1.1rem 1.2rem;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border-subtle);
+      background: radial-gradient(circle at 0 0, rgba(56,189,248,0.1), transparent 60%), var(--card);
+      padding: 1.05rem 1.0rem;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      gap: 0.7rem;
+      gap: 0.85rem;
+      box-shadow: 0 16px 35px rgba(15,23,42,0.9);
       font-size: 0.86rem;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.95);
-      position: relative;
-      overflow: hidden;
-      transition: transform 0.16s ease, box-shadow 0.16s ease, border-color 0.16s ease;
-    }
-
-    .card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at top, var(--dorado-soft), transparent 60%);
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.18s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 24px 60px rgba(0,0,0,1);
-      border-color: rgba(229,201,143,0.6);
-    }
-
-    .card:hover::before {
-      opacity: 1;
+      color: var(--text-soft);
     }
 
     .card-title {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 1.15rem;
-      color: #f9fafb;
-      margin-bottom: 0.1rem;
+      font-size: 0.98rem;
+      margin-bottom: 0.25rem;
+      color: #e5f0ff;
     }
 
     .card-tag {
       font-size: 0.78rem;
-      color: var(--texto-sec);
-      margin-bottom: 0.3rem;
-    }
-
-    .card-price {
-      font-size: 0.95rem;
-      color: var(--dorado);
-      font-weight: 500;
-      margin-top: 0.3rem;
-    }
-
-    .card-actions {
-      margin-top: 0.5rem;
-      display: flex;
-      gap: 0.45rem;
-      flex-wrap: wrap;
-    }
-
-    /* COMPARACIÓN PRECIOS */
-
-    #comparacion-precios {
-      background: radial-gradient(circle at top, #111827, #020617);
-      border-top: 1px solid rgba(55,65,81,0.9);
-      border-bottom: 1px solid rgba(55,65,81,0.9);
-    }
-
-    .precio-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1.4rem;
-      margin-top: 1.6rem;
-    }
-
-    .precio-card {
-      border-radius: 16px;
-      border: 1px solid rgba(55,65,81,0.9);
-      background: rgba(15,23,42,0.98);
-      padding: 1rem 1.1rem;
-      font-size: 0.84rem;
-      color: var(--texto-sec);
-      box-shadow: 0 18px 50px rgba(0,0,0,0.9);
-    }
-
-    .precio-card h3 {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 1.08rem;
-      color: #f9fafb;
-      margin-bottom: 0.3rem;
-    }
-
-    .precio-card p + p {
-      margin-top: 0.18rem;
-    }
-
-    .precio-card em {
-      color: #22c55e;
-      font-size: 0.8rem;
-    }
-
-    .precio-cta {
-      margin-top: 0.6rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.45rem;
-    }
-
-    /* POR QUÉ */
-
-    .benefits-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1.3rem;
-      font-size: 0.86rem;
-    }
-
-    .benefit {
-      border-radius: 16px;
-      border: 1px solid rgba(55,65,81,0.9);
-      background: rgba(15,23,42,0.98);
-      padding: 1rem 1.1rem;
-      color: var(--texto-sec);
-      box-shadow: 0 18px 50px rgba(0,0,0,0.9);
-    }
-
-    .benefit h3 {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 1.05rem;
-      color: #f9fafb;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--accent-strong);
       margin-bottom: 0.35rem;
     }
 
-    /* OPINIONES */
-
-    .opiniones-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 1rem;
-      font-size: 0.8rem;
-    }
-
-    .op-card {
-      border-radius: 14px;
-      border: 1px solid rgba(55,65,81,0.9);
-      background: rgba(15,23,42,0.98);
-      padding: 0.9rem;
-      color: var(--texto-sec);
-      box-shadow: 0 18px 46px rgba(0,0,0,0.9);
-    }
-
-    .op-text {
-      font-style: italic;
-      margin-bottom: 0.45rem;
-      color: #f9fafb;
-      font-size: 0.82rem;
-    }
-
-    .op-name {
-      font-weight: 500;
-      font-size: 0.76rem;
-      color: var(--texto-sec);
-    }
-
-    /* CONTACTO */
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-      gap: 2.3rem;
-      align-items: center;
-    }
-
-    .contact-card {
-      border-radius: 18px;
-      border: 1px solid rgba(55,65,81,0.9);
-      background: linear-gradient(145deg, #111827, #020617);
-      padding: 1.5rem 1.5rem;
-      font-size: 0.88rem;
-      color: var(--texto-sec);
-      box-shadow: 0 24px 70px rgba(0,0,0,0.95);
-    }
-
-    .contact-card h3 {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 1.35rem;
-      color: #f9fafb;
-      margin-bottom: 0.7rem;
-    }
-
-    .contact-label {
-      font-size: 0.72rem;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--texto-sec);
-      margin-bottom: 0.12rem;
-    }
-
-    .contact-value {
+    .card-price {
       font-size: 0.9rem;
-      margin-bottom: 0.6rem;
-      color: #f9fafb;
+      font-weight: 500;
+      color: #e5f0ff;
+      margin-bottom: 0.4rem;
     }
 
-    .contact-actions {
-      margin-top: 0.85rem;
+    .card-actions {
       display: flex;
-      flex-wrap: wrap;
-      gap: 0.55rem;
+      flex-direction: column;
+      gap: 0.5rem;
     }
 
-    .contact-note {
-      font-size: 0.83rem;
-      color: var(--texto-sec);
+    .muted {
+      font-size: 0.78rem;
+      color: var(--text-soft);
     }
 
-    /* WHATSAPP FLOTANTE */
+    /* SPECIAL CARD IMAGES */
 
-    #wa-float {
-      position: fixed;
-      right: 1.3rem;
-      bottom: 1.3rem;
-      width: 52px;
-      height: 52px;
-      border-radius: 50%;
-      background: var(--wa);
-      border: 1px solid rgba(6,95,70,0.8);
+    .card-image {
+      width: 100%;
+      border-radius: 14px;
+      overflow: hidden;
+      margin-bottom: 0.7rem;
+      background: radial-gradient(circle at 30% 0, #111827, #020617);
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 18px 45px rgba(34,197,94,0.9);
-      cursor: pointer;
-      z-index: 40;
-      transition: transform 0.12s ease, box-shadow 0.12s ease, opacity 0.2s ease;
+      padding: 0.7rem;
     }
 
-    #wa-float span {
-      font-size: 1.6rem;
-      color: #022c22;
+    .card-image img {
+      max-width: 90%;
+      height: auto;
+      object-fit: contain;
     }
 
-    #wa-float:hover {
-      transform: translateY(-2px) scale(1.03);
-      box-shadow: 0 24px 60px rgba(34,197,94,1);
+    /* COMPARACIÓN DE PRECIOS */
+
+    #comparacion-precios .perfume {
+      border-radius: 16px;
+      border: 1px solid var(--border-subtle);
+      padding: 1rem 1rem;
+      margin-bottom: 0.8rem;
+      background: radial-gradient(circle at 0 0, rgba(56,189,248,0.08), transparent 60%), #020617;
+      box-shadow: 0 14px 32px rgba(15,23,42,0.9);
+      font-size: 0.86rem;
+      color: var(--text-soft);
     }
 
-    /* FOOTER */
+    #comparacion-precios h3 {
+      font-size: 0.98rem;
+      margin-bottom: 0.18rem;
+      color: #e5f0ff;
+    }
+
+    #comparacion-precios p {
+      margin-bottom: 0.12rem;
+    }
+
+    #comparacion-precios small {
+      font-size: 0.78rem;
+      color: var(--text-soft);
+    }
+
+    /* CÓMO COMPRAR */
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .step-card {
+      border-radius: 16px;
+      border: 1px solid var(--border-subtle);
+      background: rgba(15,23,42,0.96);
+      padding: 1rem 1rem;
+      font-size: 0.86rem;
+      color: var(--text-soft);
+      box-shadow: 0 16px 36px rgba(15,23,42,0.9);
+    }
+
+    .step-number {
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      margin-bottom: 0.45rem;
+      color: var(--accent-strong);
+    }
+
+    .step-title {
+      font-size: 0.95rem;
+      margin-bottom: 0.25rem;
+      color: #e5f0ff;
+    }
+
+    @media (max-width: 900px) {
+      .steps {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    /* CONTACTO / FOOTER */
 
     footer {
-      border-top: 1px solid rgba(55,65,81,0.9);
-      padding: 1.4rem 0 1.7rem;
-      font-size: 0.78rem;
-      color: var(--texto-sec);
-      background: radial-gradient(circle at top, #111827, #020617);
+      border-top: 1px solid rgba(148,163,184,0.35);
+      padding: 1.5rem 0 1.8rem;
+      margin-top: 1rem;
+      font-size: 0.8rem;
+      color: var(--text-soft);
+      background: radial-gradient(circle at 100% 0, rgba(56,189,248,0.12), transparent 60%), #020617;
     }
 
     .footer-inner {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 0.9rem;
       flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.9rem;
+      align-items: center;
     }
 
-    /* RESPONSIVE */
-
-    @media (max-width: 960px) {
-      .hero-grid,
-      .sobre-grid,
-      .cards-grid,
-      .precio-grid,
-      .benefits-grid,
-      .opiniones-grid,
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-      .cards-grid { gap: 1.3rem; }
-      .opiniones-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      align-items: center;
     }
 
-    @media (max-width: 720px) {
-      .nav-links { display: none; }
-      .nav-toggle { display: block; }
-      .nav-links.open {
-        display: flex;
-        flex-direction: column;
-        gap: 0.8rem;
-        padding-bottom: 0.8rem;
-        margin-top: 0.4rem;
-      }
+    .footer-links a {
+      text-decoration: underline;
+      text-decoration-color: rgba(148,163,184,0.6);
+      text-underline-offset: 3px;
+    }
 
-      .hero { padding-top: 3rem; }
-      .hero-title { font-size: 2.4rem; }
-      section { padding: 2.6rem 0; }
-      .opiniones-grid { grid-template-columns: 1fr; }
-      #wa-float { width: 48px; height: 48px; }
+    /* REVEAL ANIMATIONS */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+    }
+
+    .reveal-visible {
+      opacity: 1;
+      transform: translateY(0);
     }
   </style>
 </head>
+
 <body>
-  <!-- HEADER -->
-  <header>
-    <div class="container">
-      <div class="nav">
-        <div class="nav-left">
-          <div class="logo-circle">A</div>
-          <div class="logo-text">
-            <div class="logo-main">Auréa Bleu</div>
-            <div class="logo-sub">fragrance studio</div>
+  <div class="page">
+    <!-- HEADER -->
+    <header>
+      <div class="container">
+        <nav class="nav">
+          <div class="brand">
+            <div class="brand-mark">AB</div>
+            <div class="brand-text">
+              <div class="brand-name">Auréa Bleu</div>
+              <div class="brand-sub">estudio de fragancias</div>
+            </div>
           </div>
-        </div>
-        <nav class="nav-links" id="nav-links">
-          <a href="#inicio">Inicio</a>
-          <a href="#fragancias">Fragancias</a>
-          <a href="#comparacion-precios">Precios</a>
-          <a href="#por-que">Por qué</a>
-          <a href="#opiniones">Opiniones</a>
-          <a href="#contacto">Contacto</a>
+
+          <div class="nav-links">
+            <a href="#fragancias">Fragancias</a>
+            <a href="#comparacion-precios">Precios</a>
+            <a href="#confianza">Confianza</a>
+            <a href="#como-comprar">Cómo comprar</a>
+          </div>
+
+          <div class="nav-cta">
+            <a class="btn btn-ghost" href="https://www.instagram.com/aurea.bleu?igsh=NW1rbWxrYWNpdTd5&utm_source=qr" target="_blank">@aurea.bleu</a>
+            <a class="btn btn-primary" href="https://wa.me/5491178898460?text=Hola%20Auréa%20Bleu,%20quiero%20asesoramiento%20para%20elegir%20un%20perfume" target="_blank">Asesoramiento</a>
+          </div>
         </nav>
-        <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú">☰</button>
       </div>
-    </div>
-  </header>
+    </header>
 
-  <main id="inicio">
     <!-- HERO -->
-    <section class="hero">
-      <div class="container hero-inner">
-        <div class="hero-grid">
-          <div>
-            <div class="hero-kicker">perfumes seleccionados</div>
-            <h1 class="hero-title">El arte de una esencia pura.</h1>
-            <p class="hero-subtitle">
-              Auréa Bleu mezcla frescura, elegancia y una mirada joven sobre el mundo de los perfumes.
-              No es solo vender un frasco: es construir presencia.
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-left">
+            <div class="eyebrow">
+              <span class="eyebrow-dot"></span>
+              Curaduría joven · perfumes originales
+            </div>
+            <h1 class="hero-title">
+              Fragancias <span class="hero-gradient-word">de nicho</span> con
+              precios honestos y estética minimalista.
+            </h1>
+            <p class="hero-sub">
+              Auréa Bleu es un pequeño estudio de fragancias que selecciona a mano
+              perfumes de diseñador y nicho. Pocas referencias, todas elegidas
+              pensando en presencia, elegancia y buena relación precio–calidad.
             </p>
-
-            <div class="hero-cta">
-              <a href="#fragancias" class="btn btn-primary">Ver fragancias</a>
-              <a href="https://wa.me/5491178898460?text=Hola%20Auréa%20Bleu,%20quiero%20asesor%C3%ADa%20para%20elegir%20un%20perfume" target="_blank" class="btn btn-wa">
-                WhatsApp
+            <div class="hero-ctas">
+              <a class="btn btn-wa" href="https://wa.me/5491178898460?text=Hola%20Auréa%20Bleu,%20quiero%20comprar%20un%20perfume%20de%20la%20web" target="_blank">
+                Comprar por WhatsApp
               </a>
+              <a class="btn btn-ghost" href="#fragancias">Ver catálogo</a>
             </div>
 
-            <div class="pill">
-              <span class="pill-dot"></span>
-              Curaduría joven: te ayudo a elegir el perfume perfecto según tu estilo, edad y ocasión.
+            <div class="hero-meta">
+              <div class="hero-meta-badge">• Envíos desde Pilar, Buenos Aires</div>
+              <div class="hero-meta-badge">• Perfumes 100% originales, nuevos y sellados</div>
             </div>
-
-            <p class="hero-note">
-              <strong>+ Estilo, − Ruido:</strong> fragancias limpias, elegantes y con personalidad,
-              pensadas para el colegio, salidas, citas y eventos.
-            </p>
           </div>
 
-          <aside class="hero-card">
-            <div class="hero-card-top">
-              <span>Vista previa Auréa Bleu</span>
-              <span class="hero-pill">Colección</span>
+          <aside class="hero-panel reveal">
+            <div class="hero-panel-header">
+              <div>
+                <div class="hero-panel-title">Selección actual Auréa Bleu</div>
+                <div style="font-size:0.78rem;color:var(--text-soft);">
+                  Creed · Tom Ford · Dior
+                </div>
+              </div>
+              <div style="font-size:0.75rem;color:var(--text-soft);text-align:right;">
+                Curaduría 2025<br />
+                <span style="color:#e5f0ff;">Stock limitado</span>
+              </div>
             </div>
-            <div class="hero-image-box">
-              <!-- Cuando tengas una foto real, reemplazá el texto por:
-                   <img src="mi-foto.jpg" alt="Colección Auréa Bleu" /> -->
-              Foto limpia de tu colección<br> conectada con tu Instagram<br> <strong>@aurea.bleu</strong>
+
+            <div class="hero-badges">
+              <div class="hero-badge-row">
+                <div class="hero-badge-label">Rango de precios</div>
+                <div class="hero-badge-value">$120.000 – $320.000 ARS</div>
+              </div>
+              <div class="hero-badge-row">
+                <div class="hero-badge-label">Marcas</div>
+                <div class="hero-badge-value">Creed · Tom Ford · Dior</div>
+              </div>
+              <div class="hero-badge-row">
+                <div class="hero-badge-label">Enfoque</div>
+                <div class="hero-badge-value">Pocas piezas, mucha calidad</div>
+              </div>
             </div>
-            <p class="hero-card-bottom">
-              Usando fotos prolijas con fondo neutro, tu web, tu WhatsApp y tu Instagram se sienten
-              como una marca de nicho real, aunque todo lo manejes vos.
-            </p>
-          </aside>
-        </div>
-      </div>
-    </section>
 
-    <!-- SOBRE LA MARCA -->
-    <section>
-      <div class="container">
-        <div class="section-header">
-          <div class="section-kicker">sobre auréa bleu</div>
-          <h2 class="section-title">Elegancia juvenil con un toque francés.</h2>
-          <p class="section-sub">
-            Inspirada en fragancias como Creed Virgin Island Water, Auréa Bleu busca esa sensación
-            de limpio, luminoso y exclusivo, pero con vibra joven.
-          </p>
-        </div>
-
-        <div class="sobre-grid">
-          <div class="sobre-text">
-            <p>
-              La idea es simple: pocos perfumes, pero bien elegidos. Fragancias que realmente encajen con
-              tu día a día, tu estilo de ropa y la imagen que querés dar.
-            </p>
-            <p>
-              No se trata de coleccionar al azar, sino de armar una selección con sentido:
-              uno para el colegio, otro para la noche, alguno más versátil y alguno más especial.
-            </p>
-            <p>
-              Además, los precios se muestran de forma clara y comparados con perfumerías conocidas
-              de Argentina, para que se note que lo que ofrecés tiene valor real.
-            </p>
-          </div>
-
-          <aside class="sobre-card">
-            <h3>¿Qué representa Auréa Bleu?</h3>
-            <p>
-              • Pureza, luz y buena presencia.<br>
-              • Estética minimalista, limpia y elegante.<br>
-              • Recomendaciones honestas, sin humo.
-            </p>
-            <div class="pills">
-              <span class="pill-tag">Fresco</span>
-              <span class="pill-tag">Minimalista</span>
-              <span class="pill-tag">Juvenil</span>
-              <span class="pill-tag">Elegante</span>
-              <span class="pill-tag">Confiable</span>
+            <div class="hero-chip-row">
+              <span class="chip">Asesoramiento personalizado</span>
+              <span class="chip">Originalidad garantizada</span>
+              <span class="chip">Curaduría joven</span>
             </div>
           </aside>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- FRAGANCIAS DESTACADAS -->
-    <section id="fragancias">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-kicker">fragancias</div>
-          <h2 class="section-title">Selección con criterio.</h2>
-          <p class="section-sub">
-            Así podés mostrar tus perfumes. Después solo duplicás las tarjetas y cambiás nombre,
-            notas, ocasión y precio.
-          </p>
-        </div>
+      <!-- ABOUT / CONCEPTO -->
+      <section id="concepto">
+        <div class="container">
+          <div class="section-header reveal">
+            <div class="section-kicker">concepto</div>
+            <h2 class="section-title">Qué es Auréa Bleu.</h2>
+            <p class="section-sub">
+              No es una perfumería masiva: es un proyecto chico, cuidado y
+              muy personal, con foco en fragancias que realmente valen la pena.
+            </p>
+          </div>
 
-        <div class="cards-grid">
-          <!-- Virgin Island Water -->
-          <article class="card">
-            <div>
-              <h3 class="card-title">Creed Virgin Island Water</h3>
-              <p class="card-tag">Día · Verano · Firma fresca</p>
+          <div class="about-grid">
+            <article class="about-card reveal">
+              <div class="about-pill">Estudio de fragancias · Curaduría</div>
               <p>
-                Lima, coco, ron blanco y jengibre. Sensación limpia, veraniega, con vibra de isla.
-                Uno de tus favoritos y un perfume con mucha personalidad.
+                Auréa Bleu nace como un <span class="about-highlight">estudio de fragancias</span>:
+                pocas referencias, todas testeadas y seleccionadas con criterio joven.
+                Se prioriza que el perfume tenga:
               </p>
-            </div>
-            <div>
-              <p class="card-price">$000</p>
-              <div class="card-actions">
-                <a class="btn btn-wa" href="https://wa.me/5491178898460?text=Hola%20Auréa%20Bleu,%20quiero%20info%20sobre%20Creed%20Virgin%20Island%20Water" target="_blank">
-                  WhatsApp
-                </a>
-                <a class="btn btn-outline" href="https://www.instagram.com/aurea.bleu?igsh=NW1rbWxrYWNpdTd5&utm_source=qr" target="_blank">
-                  Ver en Instagram
-                </a>
+              <ul class="about-list">
+                <li>
+                  <span class="about-dot"></span>
+                  <span><strong>Buena performance</strong> (proyección y duración reales).</span>
+                </li>
+                <li>
+                  <span class="about-dot"></span>
+                  <span><strong>Identidad propia</strong> (no más de lo mismo que se huele en todos lados).</span>
+                </li>
+                <li>
+                  <span class="about-dot"></span>
+                  <span><strong>Precio honesto</strong> frente a lo que se ve en retail argentino.</span>
+                </li>
+              </ul>
+            </article>
+
+            <div class="about-side">
+              <div class="about-side-card reveal">
+                <div class="about-side-label">para quién</div>
+                <p>
+                  Para personas que quieren
+                  <span class="about-side-strong">oler caro, elegante y diferente</span>
+                  sin pagar los sobreprecios de las grandes cadenas.
+                </p>
+              </div>
+
+              <div class="about-side-card reveal">
+                <div class="about-side-label">cómo funciona</div>
+                <p>
+                  Elegís la fragancia que te interesa, escribís por WhatsApp y recibís
+                  <span class="about-side-strong">asesoramiento directo</span>:
+                  ocasión de uso, performance, comparación con otras fragancias, etc.
+                </p>
               </div>
             </div>
-          </article>
-
-          <!-- Signature -->
-          <article class="card">
-            <div>
-              <h3 class="card-title">Auréa Bleu Signature</h3>
-              <p class="card-tag">Colegio · Día a día</p>
-              <p>
-                Bergamota, flores limpias y almizcle suave. Pensado para oler prolijo,
-                elegante y tranquilo, sin ser invasivo.
-              </p>
-            </div>
-            <div>
-              <p class="card-price">$000</p>
-              <div class="card-actions">
-                <a class="btn btn-wa" href="https://wa.me/5491178898460?text=Hola%20Auréa%20Bleu,%20quiero%20info%20sobre%20Auréa%20Bleu%20Signature" target="_blank">
-                  WhatsApp
-                </a>
-                <a class="btn btn-outline" href="https://www.instagram.com/aurea.bleu?igsh=NW1rbWxrYWNpdTd5&utm_source=qr" target="_blank">
-                  Ver en Instagram
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Nuit -->
-          <article class="card">
-            <div>
-              <h3 class="card-title">Nuit Auréa Intense</h3>
-              <p class="card-tag">Noche · Citas · Eventos</p>
-              <p>
-                Vainilla suave, ámbar y maderas limpias. Dulce elegante, cálida,
-                ideal para cuando querés subir un nivel tu presencia.
-              </p>
-            </div>
-            <div>
-              <p class="card-price">$000</p>
-              <div class="card-actions">
-                <a class="btn btn-wa" href="https://wa.me/5491178898460?text=Hola%20Auréa%20Bleu,%20quiero%20info%20sobre%20Nuit%20Auréa%20Intense" target="_blank">
-                  WhatsApp
-                </a>
-                <a class="btn btn-outline" href="https://www.instagram.com/aurea.bleu?igsh=NW1rbWxrYWNpdTd5&utm_source=qr" target="_blank">
-                  Ver en Instagram
-                </a>
-              </div>
-            </div>
-          </article>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- COMPARACIÓN DE PRECIOS -->
-    <section id="comparacion-precios">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-kicker">precios & transparencia</div>
-          <h2 class="section-title">Comparación con perfumerías.</h2>
-          <p class="section-sub">
-            Todos los perfumes son 100% originales, nuevos y sellados. Los precios de “perfumerías tradicionales”
-            se basan en ejemplos reales de tiendas online argentinas (Normy, Esenzzia, Noor, Farmacias Dinucci, marketplaces, etc.).
-          </p>
+      <!-- FRAGANCIAS -->
+      <section id="fragancias">
+        <div class="container">
+          <div class="section-header reveal">
+            <div class="section-kicker">fragancias</div>
+            <h2 class="section-title">Selección Auréa Bleu.</h2>
+            <p class="section-sub">
+              Catálogo reducido y curado: solo fragancias que realmente destacan por composición,
+              presencia y relación precio–calidad dentro del mercado argentino.
+            </p>
+          </div>
+
+          <div class="cards-grid">
+            <!-- Creed Aventus -->
+            <article class="card reveal">
+              <div>
+                <div class="card-image">
+                  <img src="images/creed-aventus.webp" alt="Creed Aventus 100 ml" />
+                </div>
+                <h3 class="card-title">Creed Aventus – 100 ml</h3>
+                <p class="card-tag">Firma masculina · Todo el año</p>
+                <p>
+                  Piña, bergamota, abedul y almizcles. Un ícono moderno de presencia y seguridad,
+                  ideal para quien quiere oler caro y elegante en cualquier situación.
+                </p>
+              </div>
+              <div>
+                <p class="card-price">$310.000 ARS · aprox.</p>
+                <div class="card-actions">
+                  <a class="btn btn-wa"
+                     href="https://wa.me/5491178898460?text=Hola%20Auréa%20Bleu,%20me%20interesa%20Creed%20Aventus%20de%20100ml%20que%20vi%20en%20la%20web"
+                     target="_blank">Consultar por WhatsApp</a>
+                  <a class="btn btn-ghost"
+                     href="https://www.instagram.com/aurea.bleu?igsh=NW1rbWxrYWNpdTd5&utm_source=qr"
+                     target="_blank">@aurea.bleu</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Creed Viking -->
+            <article class="card reveal">
+              <div>
+                <div class="card-image">
+                  <img src="images/creed-viking.webp" alt="Creed Viking 100 ml" />
+                </div>
+                <h3 class="card-title">Creed Viking – 100 ml</h3>
+                <p class="card-tag">Especiado fresco · Clima templado</p>
+                <p>
+                  Menta, cítricos, pimienta rosa y maderas. Energía limpia y sofisticada, perfecta
+                  para quien quiere algo distintivo sin perder elegancia.
+                </p>
+              </div>
+              <div>
+                <p class="card-price">$290.000 ARS · aprox.</p>
+                <div class="card-actions">
+                  <a class="btn btn-wa"
+                     href="https://wa.me/5491178898460?text=Hola%20Auréa%20Bleu,%20me%20interesa%20Creed%20Viking%20de%20100ml"
+                     target="_blank">Consultar por WhatsApp</a>
+                  <a class="btn btn-ghost"
+                     href="https://www.instagram.com/aurea.bleu?igsh=NW1rbWxrYWNpdTd5&utm_source=qr"
+                     target="_blank">@aurea.bleu</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Creed Original Santal -->
+            <article class="card reveal">
+              <div>
+                <div class="card-image">
+                  <img src="images/creed-original-santal.webp" alt="Creed Original Santal 100 ml" />
+                </div>
+                <h3 class="card-title">Creed Original Santal – 100 ml</h3>
+                <p class="card-tag">Dulce limpio · Tarde / noche</p>
+                <p>
+                  Sándalo, canela, lavanda y vainilla suave. Versátil, envolvente y atractivo,
+                  ideal para salidas, citas y planes nocturnos.
+                </p>
+              </div>
+              <div>
+                <p class="card-price">$260.000 ARS · aprox.</p>
+                <div class="card-actions">
+                  <a class="btn btn-wa"
+                     href="https://wa.me/5491178898460?text=Hola%20Auréa%20Bleu,%20me%20interesa%20Creed%20Original%20Santal%20de%20100ml"
+                     target="_blank">Consultar por WhatsApp</a>
+                  <a class="btn btn-ghost"
+                     href="https://www.instagram.com/aurea.bleu?igsh=NW1rbWxrYWNpdTd5&utm_source=qr"
+                     target="_blank">@aurea.bleu</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Creed Himalaya -->
+            <article class="card reveal">
+              <div>
+                <div class="card-image">
+                  <img src="images/creed-himalaya.webp" alt="Creed Himalaya 100 ml" />
+                </div>
+                <h3 class="card-title">Creed Himalaya – 100 ml</h3>
+                <p class="card-tag">Metálico fresco · Oficina / día</p>
+                <p>
+                  Cítricos fríos, notas metálicas y maderas. Sensación limpia, elegante y profesional,
+                  perfecta para trabajo y uso diario prolijo.
+                </p>
+              </div>
+              <div>
+                <p class="card-price">$300.000 ARS · aprox.</p>
+                <div class="card-actions">
+                  <a class="btn btn-wa"
+                     href="https://wa.me/5491178898460?text=Hola%20Auréa%20Bleu,%20me%20interesa%20Creed%20Himalaya%20de%20100ml"
+                     target="_blank">Consultar por WhatsApp</a>
+                  <a class="btn btn-ghost"
+                     href="https://www.instagram.com/aurea.bleu?igsh=NW1rbWxrYWNpdTd5&utm_source=qr"
+                     target="_blank">@aurea.bleu</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Tom Ford Oud Wood -->
+            <article class="card reveal">
+              <div>
+                <div class="card-image">
+                  <img src="images/tom-ford-oud-wood.webp" alt="Tom Ford Oud Wood 100 ml" />
+                </div>
+                <h3 class="card-title">Tom Ford Oud Wood – 100 ml</h3>
+                <p class="card-tag">Maderas nobles · Noche</p>
+                <p>
+                  Oud suave, cardamomo y vainilla ligera. Sofisticado, misterioso y muy limpio,
+                  ideal para cenas, eventos formales y noches importantes.
+                </p>
+              </div>
+              <div>
+                <p class="card-price">$320.000 ARS · aprox.</p>
+                <div class="card-actions">
+                  <a class="btn btn-wa"
+                     href="https://wa.me/5491178898460?text=Hola%20Auréa%20Bleu,%20me%20interesa%20Tom%20Ford%20Oud%20Wood%20de%20100ml"
+                     target="_blank">Consultar por WhatsApp</a>
+                  <a class="btn btn-ghost"
+                     href="https://www.instagram.com/aurea.bleu?igsh=NW1rbWxrYWNpdTd5&utm_source=qr"
+                     target="_blank">@aurea.bleu</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Tom Ford Lost Cherry -->
+            <article class="card reveal">
+              <div>
+                <div class="card-image">
+                  <img src="images/tom-ford-lost-cherry.webp" alt="Tom Ford Lost Cherry 100 ml" />
+                </div>
+                <h3 class="card-title">Tom Ford Lost Cherry – 100 ml</h3>
+                <p class="card-tag">Dulce sensual · Otoño / noche</p>
+                <p>
+                  Cereza licorosa, almendra y vainilla. Dulce elegante y llamativo, perfecto cuando querés
+                  algo sensual pero con mucha clase.
+                </p>
+              </div>
+              <div>
+                <p class="card-price">$260.000 ARS · aprox.</p>
+                <div class="card-actions">
+                  <a class="btn btn-wa"
+                     href="https://wa.me/5491178898460?text=Hola%20Auréa%20Bleu,%20me%20interesa%20Tom%20Ford%20Lost%20Cherry%20de%20100ml"
+                     target="_blank">Consultar por WhatsApp</a>
+                  <a class="btn btn-ghost"
+                     href="https://www.instagram.com/aurea.bleu?igsh=NW1rbWxrYWNpdTd5&utm_source=qr"
+                     target="_blank">@aurea.bleu</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Dior Sauvage Elixir -->
+            <article class="card reveal">
+              <div>
+                <div class="card-image">
+                  <img src="images/dior-sauvage-elixir.webp" alt="Dior Sauvage Elixir 100 ml" />
+                </div>
+                <h3 class="card-title">Dior Sauvage Elixir – 100 ml</h3>
+                <p class="card-tag">Ultra potente · Noche</p>
+                <p>
+                  Lavanda, especias y maderas densas. Proyección altísima y carácter fuerte,
+                  pensado para salir de noche y recibir cumplidos sí o sí.
+                </p>
+              </div>
+              <div>
+                <p class="card-price">$200.000 ARS · aprox.</p>
+                <div class="card-actions">
+                  <a class="btn btn-wa"
+                     href="https://wa.me/5491178898460?text=Hola%20Auréa%20Bleu,%20me%20interesa%20Dior%20Sauvage%20Elixir%20de%20100ml"
+                     target="_blank">Consultar por WhatsApp</a>
+                  <a class="btn btn-ghost"
+                     href="https://www.instagram.com/aurea.bleu?igsh=NW1rbWxrYWNpdTd5&utm_source=qr"
+                     target="_blank">@aurea.bleu</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Dior Homme Intense -->
+            <article class="card reveal">
+              <div>
+                <div class="card-image">
+                  <img src="images/dior-homme-intense.webp" alt="Dior Homme Intense 150 ml" />
+                </div>
+                <h3 class="card-title">Dior Homme Intense – 150 ml</h3>
+                <p class="card-tag">Iris elegante · Otoño / invierno</p>
+                <p>
+                  Iris, cacao y maderas. Perfume elegante, maduro y cálido, ideal para noches frías,
+                  citas y situaciones donde querés oler muy fino.
+                </p>
+              </div>
+              <div>
+                <p class="card-price">$120.000 ARS · aprox.</p>
+                <div class="card-actions">
+                  <a class="btn btn-wa"
+                     href="https://wa.me/5491178898460?text=Hola%20Auréa%20Bleu,%20me%20interesa%20Dior%20Homme%20Intense%20de%20150ml"
+                     target="_blank">Consultar por WhatsApp</a>
+                  <a class="btn btn-ghost"
+                     href="https://www.instagram.com/aurea.bleu?igsh=NW1rbWxrYWNpdTd5&utm_source=qr"
+                     target="_blank">@aurea.bleu</a>
+                </div>
+              </div>
+            </article>
+          </div>
         </div>
+      </section>
 
-        <div class="precio-grid">
-          <article class="precio-card">
+      <!-- COMPARACIÓN DE PRECIOS -->
+      <section id="comparacion-precios">
+        <div class="container">
+          <div class="section-header reveal">
+            <div class="section-kicker">precios</div>
+            <h2 class="section-title">Comparación de precios vs perfumerías.</h2>
+            <p class="section-sub">
+              Todos los perfumes son <strong>100% originales, nuevos y sellados</strong>.
+              Los precios de “perfumerías tradicionales” se basan en ejemplos reales de tiendas
+              online argentinas (Normy, Esenzzia, Noor, Farmacias Dinucci, marketplaces, etc.).
+            </p>
+            <p class="muted" style="margin-top:0.4rem;">
+              Referencias aproximadas para mostrar la diferencia de rango. Pueden variar
+              según el día, promociones o stock de terceros.
+            </p>
+          </div>
+
+          <article class="perfume reveal">
             <h3>Creed Aventus – 100 ml</h3>
-            <p><strong>Perfumerías:</strong> aprox. $800.000–$900.000 ARS</p>
-            <p><strong>Mi precio:</strong> $310.000 ARS (~USD 217)</p>
-            <p><em>Muy por debajo de perfumerías tradicionales.</em></p>
-            <div class="precio-cta">
-              <a class="btn btn-wa" href="https://wa.me/5491178898460?text=Hola%20Auréa%20Bleu,%20quiero%20info%20sobre%20Creed%20Aventus%20100ml" target="_blank">
-                WhatsApp
-              </a>
-            </div>
+            <p><strong>Perfumerías argentinas (ejemplos):</strong> aprox. $800.000–$900.000 ARS</p>
+            <p><strong>Precio Auréa Bleu:</strong> $310.000 ARS (~USD 217)</p>
+            <p><em>Rango muy por debajo de perfumerías tradicionales.</em></p>
           </article>
 
-          <article class="precio-card">
+          <article class="perfume reveal">
             <h3>Creed Viking – 100 ml</h3>
-            <p><strong>Perfumerías:</strong> similar a otros Creed de nicho.</p>
-            <p><strong>Mi precio:</strong> $290.000 ARS (~USD 203)</p>
-            <div class="precio-cta">
-              <a class="btn btn-wa" href="https://wa.me/5491178898460?text=Hola%20Auréa%20Bleu,%20quiero%20info%20sobre%20Creed%20Viking%20100ml" target="_blank">
-                WhatsApp
-              </a>
-            </div>
+            <p><strong>Perfumerías argentinas (ejemplos):</strong> rango similar a otros Creed de nicho.</p>
+            <p><strong>Precio Auréa Bleu:</strong> $290.000 ARS (~USD 203)</p>
           </article>
 
-          <article class="precio-card">
+          <article class="perfume reveal">
             <h3>Creed Original Santal – 100 ml</h3>
-            <p><strong>Perfumerías:</strong> cerca de $900.000 ARS.</p>
-            <p><strong>Mi precio:</strong> $260.000 ARS (~USD 182)</p>
-            <div class="precio-cta">
-              <a class="btn btn-wa" href="https://wa.me/5491178898460?text=Hola%20Auréa%20Bleu,%20quiero%20info%20sobre%20Creed%20Original%20Santal%20100ml" target="_blank">
-                WhatsApp
-              </a>
-            </div>
+            <p><strong>Perfumerías argentinas (ejemplos):</strong> se ha listado cerca de los $900.000 ARS.</p>
+            <p><strong>Precio Auréa Bleu:</strong> $260.000 ARS (~USD 182)</p>
           </article>
 
-          <article class="precio-card">
+          <article class="perfume reveal">
             <h3>Creed Himalaya – 100 ml</h3>
-            <p><strong>Perfumerías:</strong> similar a otros Creed 100 ml.</p>
-            <p><strong>Mi precio:</strong> $300.000 ARS (~USD 210)</p>
-            <div class="precio-cta">
-              <a class="btn btn-wa" href="https://wa.me/5491178898460?text=Hola%20Auréa%20Bleu,%20quiero%20info%20sobre%20Creed%20Himalaya%20100ml" target="_blank">
-                WhatsApp
-              </a>
-            </div>
+            <p><strong>Perfumerías argentinas (ejemplos):</strong> precios similares a otros Creed 100 ml.</p>
+            <p><strong>Precio Auréa Bleu:</strong> $300.000 ARS (~USD 210)</p>
           </article>
 
-          <article class="precio-card">
+          <article class="perfume reveal">
             <h3>Tom Ford Oud Wood – 100 ml</h3>
-            <p><strong>Perfumerías:</strong> $650.000–$950.000 ARS.</p>
-            <p><strong>Mi precio:</strong> $320.000 ARS (~USD 224)</p>
-            <div class="precio-cta">
-              <a class="btn btn-wa" href="https://wa.me/5491178898460?text=Hola%20Auréa%20Bleu,%20quiero%20info%20sobre%20Tom%20Ford%20Oud%20Wood%20100ml" target="_blank">
-                WhatsApp
-              </a>
-            </div>
+            <p><strong>Perfumerías argentinas (ejemplos):</strong> alrededor de $650.000–$950.000 ARS.</p>
+            <p><strong>Precio Auréa Bleu:</strong> $320.000 ARS (~USD 224)</p>
           </article>
 
-          <article class="precio-card">
+          <article class="perfume reveal">
             <h3>Tom Ford Lost Cherry – 100 ml</h3>
-            <p><strong>Perfumerías:</strong> el 50 ml ya supera los $600.000 ARS.</p>
-            <p><strong>Mi precio:</strong> $260.000 ARS (~USD 182)</p>
-            <div class="precio-cta">
-              <a class="btn btn-wa" href="https://wa.me/5491178898460?text=Hola%20Auréa%20Bleu,%20quiero%20info%20sobre%20Tom%20Ford%20Lost%20Cherry%20100ml" target="_blank">
-                WhatsApp
-              </a>
-            </div>
+            <p><strong>Perfumerías argentinas (ejemplos):</strong> el frasco de 50 ml ya supera los $600.000 ARS en algunos canales.</p>
+            <p><strong>Precio Auréa Bleu:</strong> $260.000 ARS (~USD 182)</p>
           </article>
 
-          <article class="precio-card">
+          <article class="perfume reveal">
             <h3>Dior Sauvage Elixir – 100 ml</h3>
-            <p><strong>Perfumerías:</strong> aprox. $500.000–$580.000 ARS.</p>
-            <p><strong>Mi precio:</strong> $200.000 ARS (~USD 140)</p>
-            <div class="precio-cta">
-              <a class="btn btn-wa" href="https://wa.me/5491178898460?text=Hola%20Auréa%20Bleu,%20quiero%20info%20sobre%20Dior%20Sauvage%20Elixir%20100ml" target="_blank">
-                WhatsApp
-              </a>
-            </div>
+            <p><strong>Perfumerías argentinas (ejemplos):</strong> aprox. $500.000–$580.000 ARS.</p>
+            <p><strong>Precio Auréa Bleu:</strong> $200.000 ARS (~USD 140)</p>
           </article>
 
-          <article class="precio-card">
+          <article class="perfume reveal">
             <h3>Dior Homme Intense – 150 ml</h3>
-            <p><strong>Perfumerías:</strong> muy alto en tamaños grandes.</p>
-            <p><strong>Mi precio:</strong> $120.000 ARS (~USD 84)</p>
-            <div class="precio-cta">
-              <a class="btn btn-wa" href="https://wa.me/5491178898460?text=Hola%20Auréa%20Bleu,%20quiero%20info%20sobre%20Dior%20Homme%20Intense%20150ml" target="_blank">
-                WhatsApp
-              </a>
-            </div>
+            <p><strong>Perfumerías argentinas (ejemplos):</strong> precio alto en tamaños grandes dentro de la línea Dior Homme.</p>
+            <p><strong>Precio Auréa Bleu:</strong> $120.000 ARS (~USD 84)</p>
           </article>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- POR QUÉ AURÉA BLEU -->
-    <section id="por-que">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-kicker">por qué elegirte</div>
-          <h2 class="section-title">Más que vender, aconsejar.</h2>
-          <p class="section-sub">
-            La diferencia está en cómo hablás de los perfumes y cómo ayudás a la gente a elegir.
-          </p>
-        </div>
+      <!-- CONFIANZA -->
+      <section id="confianza">
+        <div class="container">
+          <div class="section-header reveal">
+            <div class="section-kicker">confianza</div>
+            <h2 class="section-title">Originalidad, precios y envíos claros.</h2>
+            <p class="section-sub">
+              Vender perfumes de alta gama requiere transparencia total. Por eso, Auréa Bleu
+              se apoya en tres pilares simples: originalidad, explicación de precios y logística cuidada.
+            </p>
+          </div>
 
-        <div class="benefits-grid">
-          <div class="benefit">
-            <h3>Curaduría personal</h3>
-            <p>
-              Recomendaciones según edad, estilo, clima y ocasión. Nada random:
-              cada fragancia tiene un motivo para estar en tu catálogo.
-            </p>
-          </div>
-          <div class="benefit">
-            <h3>Imagen pulida</h3>
-            <p>
-              Estética coherente entre web e Instagram. Minimalismo, limpieza y ese toque de lujo
-              que hace que todo parezca de nicho.
-            </p>
-          </div>
-          <div class="benefit">
-            <h3>Transparencia</h3>
-            <p>
-              Comparar precios con perfumerías grandes muestra que lo tuyo no es humo:
-              es valor real y perfumes originales.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+          <div class="cards-grid">
+            <article class="card reveal">
+              <h3 class="card-title">Perfumes 100% originales</h3>
+              <p>
+                Todos los perfumes son <strong>originales, nuevos y sellados</strong>.
+                Podés verificar los <em>batch codes</em> en bases de datos públicas.
+                No se trabaja con imitaciones, clones ni inspiraciones.
+              </p>
+            </article>
 
-    <!-- OPINIONES -->
-    <section id="opiniones">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-kicker">opiniones</div>
-          <h2 class="section-title">Lo que dicen tus clientes.</h2>
-          <p class="section-sub">
-            Podés reemplazar estos textos por reseñas reales de WhatsApp o Instagram.
-          </p>
-        </div>
+            <article class="card reveal">
+              <h3 class="card-title">¿Por qué son más baratos?</h3>
+              <p>
+                Se trabaja con <strong>proveedores especializados</strong> y compras
+                planificadas, sin costos de local físico ni grandes campañas de marketing.
+                Eso permite ofrecer precios muy por debajo de perfumerías tradicionales
+                manteniendo siempre producto original.
+              </p>
+              <p class="muted">
+                Los precios de referencia se basan en el promedio de retail online argentino
+                al momento de la última revisión y pueden variar con el tiempo.
+              </p>
+            </article>
 
-        <div class="opiniones-grid">
-          <div class="op-card">
-            <p class="op-text">
-              “Me ayudó a elegir un perfume que encaja perfecto conmigo. Se nota que sabe.”
-            </p>
-            <p class="op-name">Agustín · Cliente</p>
-          </div>
-          <div class="op-card">
-            <p class="op-text">
-              “Todo original, sellado y súper bien presentado. Los precios son un gol.”
-            </p>
-            <p class="op-name">Sofía · Cliente</p>
-          </div>
-          <div class="op-card">
-            <p class="op-text">
-              “La explicación de duración y proyección fue clave para decidir. Cero humo.”
-            </p>
-            <p class="op-name">Lucas · Cliente</p>
-          </div>
-          <div class="op-card">
-            <p class="op-text">
-              “La estética de la marca está buenísima. Se nota mucho cuidado.”
-            </p>
-            <p class="op-name">Mica · Cliente</p>
-          </div>
-          <div class="op-card">
-            <p class="op-text">
-              “Perfumes distintos a los de siempre. Ideal si buscás algo único.”
-            </p>
-            <p class="op-name">Martín · Cliente</p>
-          </div>
-          <div class="op-card">
-            <p class="op-text">
-              “Volvería a comprar. Siempre buena atención y respeto por los tiempos.”
-            </p>
-            <p class="op-name">Camila · Cliente</p>
-          </div>
-          <div class="op-card">
-            <p class="op-text">
-              “Te explica como amigo, pero con data técnica. Eso se agradece.”
-            </p>
-            <p class="op-name">Tomás · Cliente</p>
-          </div>
-          <div class="op-card">
-            <p class="op-text">
-              “Calidad, estilo y confianza. Auréa Bleu se siente distinto a todo lo demás.”
-            </p>
-            <p class="op-name">Lucía · Cliente</p>
+            <article class="card reveal">
+              <h3 class="card-title">Pagos & envíos</h3>
+              <p>
+                Pagos por <strong>transferencia bancaria</strong> o
+                <strong>Mercado Pago</strong>. Consultá por otras opciones si lo necesitás.
+              </p>
+              <p>
+                Entregas en persona en <strong>Pilar y alrededores</strong> y envíos
+                a todo el país mediante correo o mensajería privada, siempre con
+                embalaje cuidado y número de seguimiento.
+              </p>
+            </article>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- CONTACTO -->
-    <section id="contacto">
-      <div class="container">
-        <div class="contact-grid">
-          <div class="contact-card">
-            <h3>Contacto & pedidos</h3>
-            <p>
-              Para dudas, recomendaciones personalizadas y compras, usá WhatsApp o Instagram.
-            </p>
-
-            <div style="margin-top:0.9rem;">
-              <div class="contact-label">WhatsApp</div>
-              <div class="contact-value">
-                <a href="https://wa.me/5491178898460" target="_blank">
-                  +54 9 11 7889 8460
-                </a>
-              </div>
-
-              <div class="contact-label">Instagram</div>
-              <div class="contact-value">
-                <a href="https://www.instagram.com/aurea.bleu?igsh=NW1rbWxrYWNpdTd5&utm_source=qr" target="_blank">
-                  @aurea.bleu
-                </a>
-              </div>
-
-              <div class="contact-label">Respuesta</div>
-              <div class="contact-value">
-                Principalmente por la tarde y noche.
-              </div>
-            </div>
-
-            <div class="contact-actions">
-              <a href="https://wa.me/5491178898460" target="_blank" class="btn btn-wa">Escribirme</a>
-              <a href="https://www.instagram.com/aurea.bleu?igsh=NW1rbWxrYWNpdTd5&utm_source=qr" target="_blank" class="btn btn-outline">Ver Instagram</a>
-            </div>
-          </div>
-
-          <div>
-            <p class="contact-note">
-              Tip: usá siempre fotos con fondo limpio (mesa blanca, pared clara, buena luz) para tus frascos.
-              Si repetís esa estética en la web y en <strong>@aurea.bleu</strong>, la marca se siente muy premium
-              aunque estés arrancando.
+      <!-- CÓMO COMPRAR -->
+      <section id="como-comprar">
+        <div class="container">
+          <div class="section-header reveal">
+            <div class="section-kicker">paso a paso</div>
+            <h2 class="section-title">Cómo comprar en Auréa Bleu.</h2>
+            <p class="section-sub">
+              El objetivo es que sea simple y humano: hablás directo con la persona que curó
+              las fragancias, no con un bot ni con un call center.
             </p>
           </div>
+
+          <div class="steps">
+            <article class="step-card reveal">
+              <div class="step-number">1</div>
+              <h3 class="step-title">Elegís la fragancia</h3>
+              <p>
+                Revisás el catálogo, comparás descripción, precio y estilo.
+                Si dudás entre dos o tres opciones, escribís por WhatsApp para que te orientemos.
+              </p>
+            </article>
+
+            <article class="step-card reveal">
+              <div class="step-number">2</div>
+              <h3 class="step-title">Coordinamos pago y envío</h3>
+              <p>
+                Definimos método de pago (transferencia o Mercado Pago), forma de entrega
+                y fecha estimada. Todo queda por escrito para tu tranquilidad.
+              </p>
+            </article>
+
+            <article class="step-card reveal">
+              <div class="step-number">3</div>
+              <h3 class="step-title">Recibís tu perfume</h3>
+              <p>
+                Embalaje prolijo, botella original y comunicación abierta ante cualquier duda.
+                La idea es que quieras volver, no hacer una sola venta.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="contacto">
+      <div class="container footer-inner">
+        <div>
+          © <span id="year"></span> Auréa Bleu · Estudio de fragancias.
+          Diseñado en Buenos Aires, Argentina.
+        </div>
+        <div class="footer-links">
+          <span>Contacto directo:</span>
+          <a href="https://wa.me/5491178898460?text=Hola%20Auréa%20Bleu,%20quiero%20más%20información%20sobre%20las%20fragancias" target="_blank">
+            WhatsApp
+          </a>
+          <span>·</span>
+          <a href="https://www.instagram.com/aurea.bleu?igsh=NW1rbWxrYWNpdTd5&utm_source=qr" target="_blank">
+            Instagram
+          </a>
         </div>
       </div>
-    </section>
-  </main>
-
-  <!-- WHATSAPP FLOTANTE -->
-  <a
-    id="wa-float"
-    href="https://wa.me/5491178898460?text=Hola%20Auréa%20Bleu,%20quiero%20info%20sobre%20tus%20perfumes"
-    target="_blank"
-    aria-label="WhatsApp Auréa Bleu"
-  >
-    <span>𖣠</span>
-  </a>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="container footer-inner">
-      <span>© Auréa Bleu. Todos los derechos reservados.</span>
-      <span>Sitio creado para tu proyecto de fragancias.</span>
-    </div>
-  </footer>
+    </footer>
+  </div>
 
   <script>
-    // Menú mobile
-    const navToggle = document.getElementById("nav-toggle");
-    const navLinks = document.getElementById("nav-links");
-    navToggle.addEventListener("click", () => {
-      navLinks.classList.toggle("open");
-    });
+    // Año dinámico en el footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Animaciones de aparición suave
+    const reveals = document.querySelectorAll(".reveal");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("reveal-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.14 }
+    );
+
+    reveals.forEach((el) => observer.observe(el));
   </script>
 </body>
 </html>
