@@ -25,6 +25,21 @@
       --radius-xl: 18px;
       --shadow-soft: 0 22px 60px rgba(15,23,42,0.85);
       --max-width: 1100px;
+
+      /* Spacing scale */
+      --space-xs: 0.25rem;
+      --space-sm: 0.5rem;
+      --space-md: 1rem;
+      --space-lg: 1.5rem;
+      --space-xl: 2rem;
+      --space-2xl: 3rem;
+
+      /* Font-size scale */
+      --text-xs: 0.72rem;
+      --text-sm: 0.82rem;
+      --text-base: 0.9rem;
+      --text-md: 1rem;
+      --text-lg: 1.1rem;
     }
 
     * {
@@ -475,30 +490,6 @@
       gap: 1.3rem;
     }
 
-    @media (max-width: 1024px) {
-      .cards-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-
-    @media (max-width: 700px) {
-      .hero-grid,
-      .about-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .cards-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      header {
-        position: static;
-      }
-
-      .nav-links {
-        display: none;
-      }
-    }
 
     .card {
       border-radius: var(--radius-xl);
@@ -631,11 +622,6 @@
       color: #e5f0ff;
     }
 
-    @media (max-width: 900px) {
-      .steps {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
 
     /* CONTACTO / FOOTER */
 
@@ -681,6 +667,88 @@
       opacity: 1;
       transform: translateY(0);
     }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 1024px) {
+      .cards-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 900px) {
+      .steps {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 700px) {
+      header {
+        position: static;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero-grid,
+      .about-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .cards-grid,
+      .cards-grid-3 {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .steps {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    /* FOCUS VISIBLE — keyboard navigation */
+
+    :focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+
+    .btn:focus-visible {
+      outline-offset: 4px;
+      border-radius: 999px;
+    }
+
+    /* GRID VARIANTS */
+
+    .cards-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.3rem;
+    }
+
+    /* HERO PANEL UTILITIES */
+
+    .panel-brands {
+      font-size: 0.78rem;
+      color: var(--text-soft);
+    }
+
+    .panel-meta {
+      font-size: 0.75rem;
+      color: var(--text-soft);
+      text-align: right;
+    }
+
+    .text-bright {
+      color: #e5f0ff;
+    }
+
+    .mt-xs {
+      margin-top: 0.4rem;
+    }
   </style>
 </head>
 
@@ -691,7 +759,7 @@
       <div class="container">
         <nav class="nav">
           <div class="brand">
-            <div class="brand-mark">AB</div>
+            <div class="brand-mark" aria-label="Auréa Bleu">AB</div>
             <div class="brand-text">
               <div class="brand-name">Auréa Bleu</div>
               <div class="brand-sub">estudio de fragancias</div>
@@ -706,8 +774,8 @@
           </div>
 
           <div class="nav-cta">
-            <a class="btn btn-ghost" href="https://www.instagram.com/aurea.bleu?igsh=NW1rbWxrYWNpdTd5&utm_source=qr" target="_blank">@aurea.bleu</a>
-            <a class="btn btn-primary" href="https://wa.me/5491178898460?text=Hola%20Auréa%20Bleu,%20quiero%20asesoramiento%20para%20elegir%20un%20perfume" target="_blank">Asesoramiento</a>
+            <a class="btn btn-ghost" href="https://www.instagram.com/aurea.bleu?igsh=NW1rbWxrYWNpdTd5&utm_source=qr" target="_blank" rel="noopener noreferrer">@aurea.bleu</a>
+            <a class="btn btn-primary" href="https://wa.me/5491178898460?text=Hola%20Auréa%20Bleu,%20quiero%20asesoramiento%20para%20elegir%20un%20perfume" target="_blank" rel="noopener noreferrer">Asesoramiento</a>
           </div>
         </nav>
       </div>
@@ -732,7 +800,7 @@
               pensando en presencia, elegancia y buena relación precio–calidad.
             </p>
             <div class="hero-ctas">
-              <a class="btn btn-wa" href="https://wa.me/5491178898460?text=Hola%20Auréa%20Bleu,%20quiero%20comprar%20un%20perfume%20de%20la%20web" target="_blank">
+              <a class="btn btn-wa" href="https://wa.me/5491178898460?text=Hola%20Auréa%20Bleu,%20quiero%20comprar%20un%20perfume%20de%20la%20web" target="_blank" rel="noopener noreferrer">
                 Comprar por WhatsApp
               </a>
               <a class="btn btn-ghost" href="#fragancias">Ver catálogo</a>
@@ -748,13 +816,13 @@
             <div class="hero-panel-header">
               <div>
                 <div class="hero-panel-title">Selección actual Auréa Bleu</div>
-                <div style="font-size:0.78rem;color:var(--text-soft);">
+                <div class="panel-brands">
                   Creed · Tom Ford · Dior
                 </div>
               </div>
-              <div style="font-size:0.75rem;color:var(--text-soft);text-align:right;">
+              <div class="panel-meta">
                 Curaduría 2025<br />
-                <span style="color:#e5f0ff;">Stock limitado</span>
+                <span class="text-bright">Stock limitado</span>
               </div>
             </div>
 
@@ -872,10 +940,10 @@
                 <div class="card-actions">
                   <a class="btn btn-wa"
                      href="https://wa.me/5491178898460?text=Hola%20Auréa%20Bleu,%20me%20interesa%20Creed%20Aventus%20de%20100ml%20que%20vi%20en%20la%20web"
-                     target="_blank">Consultar por WhatsApp</a>
+                     target="_blank" rel="noopener noreferrer">Consultar por WhatsApp</a>
                   <a class="btn btn-ghost"
                      href="https://www.instagram.com/aurea.bleu?igsh=NW1rbWxrYWNpdTd5&utm_source=qr"
-                     target="_blank">@aurea.bleu</a>
+                     target="_blank" rel="noopener noreferrer">@aurea.bleu</a>
                 </div>
               </div>
             </article>
@@ -898,10 +966,10 @@
                 <div class="card-actions">
                   <a class="btn btn-wa"
                      href="https://wa.me/5491178898460?text=Hola%20Auréa%20Bleu,%20me%20interesa%20Creed%20Viking%20de%20100ml"
-                     target="_blank">Consultar por WhatsApp</a>
+                     target="_blank" rel="noopener noreferrer">Consultar por WhatsApp</a>
                   <a class="btn btn-ghost"
                      href="https://www.instagram.com/aurea.bleu?igsh=NW1rbWxrYWNpdTd5&utm_source=qr"
-                     target="_blank">@aurea.bleu</a>
+                     target="_blank" rel="noopener noreferrer">@aurea.bleu</a>
                 </div>
               </div>
             </article>
@@ -924,10 +992,10 @@
                 <div class="card-actions">
                   <a class="btn btn-wa"
                      href="https://wa.me/5491178898460?text=Hola%20Auréa%20Bleu,%20me%20interesa%20Creed%20Original%20Santal%20de%20100ml"
-                     target="_blank">Consultar por WhatsApp</a>
+                     target="_blank" rel="noopener noreferrer">Consultar por WhatsApp</a>
                   <a class="btn btn-ghost"
                      href="https://www.instagram.com/aurea.bleu?igsh=NW1rbWxrYWNpdTd5&utm_source=qr"
-                     target="_blank">@aurea.bleu</a>
+                     target="_blank" rel="noopener noreferrer">@aurea.bleu</a>
                 </div>
               </div>
             </article>
@@ -950,10 +1018,10 @@
                 <div class="card-actions">
                   <a class="btn btn-wa"
                      href="https://wa.me/5491178898460?text=Hola%20Auréa%20Bleu,%20me%20interesa%20Creed%20Himalaya%20de%20100ml"
-                     target="_blank">Consultar por WhatsApp</a>
+                     target="_blank" rel="noopener noreferrer">Consultar por WhatsApp</a>
                   <a class="btn btn-ghost"
                      href="https://www.instagram.com/aurea.bleu?igsh=NW1rbWxrYWNpdTd5&utm_source=qr"
-                     target="_blank">@aurea.bleu</a>
+                     target="_blank" rel="noopener noreferrer">@aurea.bleu</a>
                 </div>
               </div>
             </article>
@@ -976,10 +1044,10 @@
                 <div class="card-actions">
                   <a class="btn btn-wa"
                      href="https://wa.me/5491178898460?text=Hola%20Auréa%20Bleu,%20me%20interesa%20Tom%20Ford%20Oud%20Wood%20de%20100ml"
-                     target="_blank">Consultar por WhatsApp</a>
+                     target="_blank" rel="noopener noreferrer">Consultar por WhatsApp</a>
                   <a class="btn btn-ghost"
                      href="https://www.instagram.com/aurea.bleu?igsh=NW1rbWxrYWNpdTd5&utm_source=qr"
-                     target="_blank">@aurea.bleu</a>
+                     target="_blank" rel="noopener noreferrer">@aurea.bleu</a>
                 </div>
               </div>
             </article>
@@ -1002,10 +1070,10 @@
                 <div class="card-actions">
                   <a class="btn btn-wa"
                      href="https://wa.me/5491178898460?text=Hola%20Auréa%20Bleu,%20me%20interesa%20Tom%20Ford%20Lost%20Cherry%20de%20100ml"
-                     target="_blank">Consultar por WhatsApp</a>
+                     target="_blank" rel="noopener noreferrer">Consultar por WhatsApp</a>
                   <a class="btn btn-ghost"
                      href="https://www.instagram.com/aurea.bleu?igsh=NW1rbWxrYWNpdTd5&utm_source=qr"
-                     target="_blank">@aurea.bleu</a>
+                     target="_blank" rel="noopener noreferrer">@aurea.bleu</a>
                 </div>
               </div>
             </article>
@@ -1028,10 +1096,10 @@
                 <div class="card-actions">
                   <a class="btn btn-wa"
                      href="https://wa.me/5491178898460?text=Hola%20Auréa%20Bleu,%20me%20interesa%20Dior%20Sauvage%20Elixir%20de%20100ml"
-                     target="_blank">Consultar por WhatsApp</a>
+                     target="_blank" rel="noopener noreferrer">Consultar por WhatsApp</a>
                   <a class="btn btn-ghost"
                      href="https://www.instagram.com/aurea.bleu?igsh=NW1rbWxrYWNpdTd5&utm_source=qr"
-                     target="_blank">@aurea.bleu</a>
+                     target="_blank" rel="noopener noreferrer">@aurea.bleu</a>
                 </div>
               </div>
             </article>
@@ -1054,10 +1122,10 @@
                 <div class="card-actions">
                   <a class="btn btn-wa"
                      href="https://wa.me/5491178898460?text=Hola%20Auréa%20Bleu,%20me%20interesa%20Dior%20Homme%20Intense%20de%20150ml"
-                     target="_blank">Consultar por WhatsApp</a>
+                     target="_blank" rel="noopener noreferrer">Consultar por WhatsApp</a>
                   <a class="btn btn-ghost"
                      href="https://www.instagram.com/aurea.bleu?igsh=NW1rbWxrYWNpdTd5&utm_source=qr"
-                     target="_blank">@aurea.bleu</a>
+                     target="_blank" rel="noopener noreferrer">@aurea.bleu</a>
                 </div>
               </div>
             </article>
@@ -1076,7 +1144,7 @@
               Los precios de “perfumerías tradicionales” se basan en ejemplos reales de tiendas
               online argentinas (Normy, Esenzzia, Noor, Farmacias Dinucci, marketplaces, etc.).
             </p>
-            <p class="muted" style="margin-top:0.4rem;">
+            <p class="muted mt-xs">
               Referencias aproximadas para mostrar la diferencia de rango. Pueden variar
               según el día, promociones o stock de terceros.
             </p>
@@ -1145,7 +1213,7 @@
             </p>
           </div>
 
-          <div class="cards-grid">
+          <div class="cards-grid-3">
             <article class="card reveal">
               <h3 class="card-title">Perfumes 100% originales</h3>
               <p>
@@ -1238,11 +1306,11 @@
         </div>
         <div class="footer-links">
           <span>Contacto directo:</span>
-          <a href="https://wa.me/5491178898460?text=Hola%20Auréa%20Bleu,%20quiero%20más%20información%20sobre%20las%20fragancias" target="_blank">
+          <a href="https://wa.me/5491178898460?text=Hola%20Auréa%20Bleu,%20quiero%20más%20información%20sobre%20las%20fragancias" target="_blank" rel="noopener noreferrer">
             WhatsApp
           </a>
           <span>·</span>
-          <a href="https://www.instagram.com/aurea.bleu?igsh=NW1rbWxrYWNpdTd5&utm_source=qr" target="_blank">
+          <a href="https://www.instagram.com/aurea.bleu?igsh=NW1rbWxrYWNpdTd5&utm_source=qr" target="_blank" rel="noopener noreferrer">
             Instagram
           </a>
         </div>
@@ -1253,6 +1321,15 @@
   <script>
     // Año dinámico en el footer
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Lazy loading y fallback para imágenes de productos
+    document.querySelectorAll(".card-image img").forEach((img) => {
+      img.loading = "lazy";
+      img.onerror = function () {
+        this.style.display = "none";
+        this.parentElement.style.minHeight = "120px";
+      };
+    });
 
     // Animaciones de aparición suave
     const reveals = document.querySelectorAll(".reveal");
